@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password: root
+  host: localhost
+
+development:
+  <<: *default
+  database: development_coding_karma
+
+production:
+  <<: *default
+  database: development_coding_karma
+
+test:
+  <<: *default
+  database: test_coding_karma
