@@ -1,4 +1,4 @@
-<h1>Coding Karma</h1>
+<!-- <h1>Coding Karma</h1>
 
 <% if user_signed_in? %>
 	
@@ -11,3 +11,372 @@
 	<%= link_to 'Sign up',  new_user_registration_path  %>
 
 <% end %>
+ -->
+
+ <!DOCTYPE html>
+<html>
+<title>Coding Karma</title>
+<meta charset="UTF-8">
+<link rel="icon" href="assets/mylogo.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+/* Full height image header */
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("/assets/header.jpg");
+    min-height: 100%;
+}
+.bar .button {
+    padding: 16px;
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="top">
+  <div class="bar white card-2" id="myNavbar">
+    <a href="#home" class="bar-item button wide">CodingKarma</a>
+    <!-- Right-sided navbar links -->
+    <div class="right hide-small">
+      <a href="#about" class="bar-item button"><i class="fa fa-vcard"></i>ABOUT</a>
+      <a href="#team" class="bar-item button"><i class="fa fa-users"></i> TEAM</a>
+      <a href="#work" class="bar-item button"><i class="fa fa-th"></i> COURCES</a>
+      <% if user_signed_in? %>
+				<%= link_to destroy_user_session_path, class: "bar-item button", method: :delete do %>
+				  <i class="fa fa-user"></i>LOGOUT
+				<% end %>
+			<% else %>
+				<%= link_to new_user_session_path, class: "bar-item button" do %>
+				  <i class="fa fa-user"></i>LOGIN
+				<% end %>
+			<% end %>
+      <a href="#contact" class="bar-item button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="bar-item button right hide-large hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="sidebar bar-block black card-2 animate-left hide-medium hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="bar-item button large padding-16">Close ×</a>
+  <a href="#about" onclick="w3_close()" class="bar-item button">ABOUT</a>
+  <a href="#team" onclick="w3_close()" class="bar-item button">TEAM</a>
+  <a href="#work" onclick="w3_close()" class="bar-item button">COURSES</a>
+  <a href="login-1/login.html" onclick="w3_close()" class="bar-item button">LOGIN</a>
+  <a href="#contact" onclick="w3_close()" class="bar-item button">CONTACT</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 display-container grayscale-min" id="home">
+  <div class="display-left text-white" style="padding:48px">
+    <span class="jumbo hide-small">Start something that matters</span><br>
+    <span class="xxlarge hide-large hide-medium">Start something that matters</span><br>
+    <span class="large">Stop wasting valuable time, Come with us and Learn some Computer Programming today.</span>
+    <p><a href="login-1/login.html" class="button white padding-large large margin-top opacity hover-opacity-off">Learn more and start today</a></p>
+  </div>
+  <div class="display-bottomleft text-grey large" style="padding:24px 48px">
+    <i class="fa fa-facebook-official hover-opacity"></i>
+    <i class="fa fa-instagram hover-opacity"></i>
+    <i class="fa fa-snapchat hover-opacity"></i>
+    <i class="fa fa-pinterest-p hover-opacity"></i>
+    <i class="fa fa-twitter hover-opacity"></i>
+    <i class="fa fa-linkedin hover-opacity"></i>
+  </div>
+</header>
+
+<!-- About Section -->
+<div class="container light-grey" style="padding:128px 16px" id="about">
+  <h3 class="center">ABOUT US</h3>
+  <p class="center large">Key features of our site</p>
+  <div class="row-padding center" style="margin-top:64px">
+    <div class="quarter">
+      <i class="fa fa-desktop margin-bottom jumbo center"></i>
+      <p class="large">Code</p>
+      <p>We teach you how to code from scratch. Our aim is to teach how to cede to all who are intrested in coding. We teach you some programming fundamentals about Linux operating system as well as it's open source advantage.  </p>
+    </div>
+    <div class="quarter">
+      <i class="fa fa-heart margin-bottom jumbo"></i>
+      <p class="large">Passion</p>
+      <p>We are the computer science students,This web-app is our dream to teach passionate people who wanted to learn, How to code? We are trying to give plenty of knowledge needed to get started.</p>
+    </div>
+    <div class="quarter">
+      <i class="fa fa-diamond margin-bottom jumbo"></i>
+      <p class="large">Design</p>
+      <p>We design the website to teach easily with video content, We are trying to explain with ease. Just you need to create an account and everithing is set-up.</p>
+    </div>
+    <div class="quarter">
+      <i class="fa fa-cog margin-bottom jumbo"></i>
+      <p class="large">Support</p>
+      <p>We are trying to solve all of your questions. You can contact us from following contact details. We are trying to give support as possible.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Promo Section - "We know design" -->
+<!--  <div class="container light-grey" style="padding:128px 16px">
+  <div class="row-padding">
+    <div class="col m6">
+      <h3>Learn to Code.</h3>
+      <p>Selecet thr course of your choice <br>and get started.</p>
+      <p><a href="#work" class="button black"><i class="fa fa-th"> </i> View Our Works</a></p>
+    </div>
+    <div class="col m6">
+      <img class="image round-large" src="w3images/phone_buildings.jpg" alt="Buildings" width="700" height="394">
+    </div>
+  </div>
+</div> -->
+
+<!-- Team Section -->
+<div class="container " style="padding:128px 16px" id="team">
+  <h3 class="center">THE TEAM</h3>
+  <p class="center large">The ones who runs this company</p>
+  <div class="row-padding grayscale" style="margin-top:64px">
+    <div class="col a3 m6 margin-bottom">
+      <div class="card-2">
+      <%= image_tag("AVANISH.jpg", alt:"Avanish", style:"width:100%") %>
+        <div class="container">
+          <h3>Avanish Patel</h3>
+          <p class="opacity">CEO & Founder</p>
+          <p>Avanish Patel is the Founder and CEO of CodingKarma. He drives the this site’s vision, strategy and growth as it provides interesting and unique ways for teaching people, How to code?. He is good  Programmer of JAVA, Python, PHP, and iOS devloper. He had more than 3 year experience working with linux operating system platform. He received Bachelor in Mechanical Enginnering from <a href="http://kirc.ac.in/" target="_blank" style="text-decoration:none">Kalol Institute of Technology & Research Center, Kalol, India.</a> Currently, He is achiving Masters in Computer Science at <a href="https://www.csu.edu/" target="_blank" style="text-decoration:none">Chicago State University, Chicago, US.</a> He became an entrepreneur early on running a web app while he is in University, making awesome web-applications.</p>
+          <p><button class="button light-grey block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="col a3 m6 margin-bottom">
+      <div class="card-2">
+        <%= image_tag("SANTOSH.jpg", alt:"Santosh", style:"width:100%") %>
+        <div class="container">
+          <h3>Santosh Sharma</h3>
+          <p class="opacity">Co-Founder</p>
+          <p>Santosh Sharma is the co-founder of CodingKarma. He leads the technical strategy of the CodingKarma, and is dedicated to building a server side strategies. He received a Bachelor degree in Information Technology from <a href="http://kirc.ac.in/" target="_blank" style="text-decoration:none">Kalol Institute of Technology & Research Center, Kalol, India.</a> He held several engineering positions with <a href="http://www.tops-int.com/" target="_blank" style="text-decoration:none">Tops Technologies</a>, and Currently working for <a href="http://www.botreetechnologies.com/" target="_blank" style="text-decoration:none">Botree Technologies.</a> He is Programmer of Ruby, and JAVA. He also work with javascript frameworks like React.js and Node.js. He did more than 7 projects while he was pursuing his Bachelor. He designed the Data-base for this web-application and working experience with MySQL AND mongoDB.</p>
+          <p><button class="button light-grey block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+<!--   <div class="col l3 m6 margin-bottom">
+      <div class="card-2">
+        <img src="w3images/team3.jpg" alt="Mike" style="width:100%">
+        <div class="container">
+          <h3>Mike Ross</h3>
+          <p class="opacity">Web Designer</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="button light-grey block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="col l3 m6 margin-bottom">
+      <div class="card-2">
+        <img src="w3images/team4.jpg" alt="Dan" style="width:100%">
+        <div class="container">
+          <h3>Dan Star</h3>
+          <p class="opacity">Designer</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="button light-grey block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>  -->
+  </div>
+</div>
+
+<!-- Course Statistics section-->
+<div class="container row center dark-grey padding-64">
+  <div class="quarter">
+    <span class="xxlarge">10+</span>
+    <br>Languages
+  </div>
+  <div class="quarter">
+    <span class="xxlarge">3+</span>
+    <br>Operating Systems Based
+  </div>
+  <div class="quarter">
+    <span class="xxlarge">4+</span>
+    <br>Databases Explained
+  </div>
+  <div class="quarter">
+    <span class="xxlarge">15+</span>
+    <br>Apps Designed
+  </div>
+</div>
+
+<!-- Course selection part -->
+<div class="container" style="padding:128px 16px" id="work">
+  <h3 class="center">Start Learn To Code</h3>
+  <p class="center large">Select the course of your intrest.</p>
+
+  <div class="row-padding" style="margin-top:64px">
+    <div class="col l3 m6">
+    	<%= image_tag("HTML5.png", alt:"HTML", class:"hover-opacity", style:"width:100%") %>
+    </div>
+    <div class="col l3 m6">
+      <%= image_tag("CSS343.png", alt:"CSS", class:"hover-opacity", style:"width:100%") %>
+    </div>
+    <div class="col l3 m6">
+      <%= image_tag("JAVASCRIPT.png", alt:"JAVASCRIPT", class:"hover-opacity", style:"width:100%") %>
+    </div>
+    <div class="col l3 m6">
+      <%= image_tag("GIT.png", alt:"GIT", class:"hover-opacity", style:"width:100%") %>
+    </div>
+  </div>
+
+  <div class="row-padding section">
+    <div class="col l3 m6">
+      <%= image_tag("jav.png", alt:"JAVA", class:"hover-opacity", style:"width:100%") %>
+    </div>
+    <div class="col l3 m6">
+      <%= image_tag("PHP.png", alt:"PHP", class:"hover-opacity", style:"width:100%") %>
+    </div>
+    <div class="col l3 m6">
+      <%= image_tag("PYTHON.png", alt:"PYTHON", class:"hover-opacity", style:"width:100%") %>
+    </div>
+    <div class="col l3 m6">
+      <%= image_tag("PYTHON.png", alt:"RUBY", class:"hover-opacity", style:"width:100%") %>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="modal black" onclick="this.style.display='none'">
+  <span class="button xxlarge black padding-large display-topright" title="Close Modal Image">×</span>
+  <div class="modal-content animate-zoom center transparent padding-64">
+    <img id="img01" class="image">
+    <p id="caption" class="opacity large"></p>
+  </div>
+</div>
+
+<!-- Skills Section
+<div class="container light-grey padding-64">
+  <div class="row-padding">
+    <div class="col m6">
+      <h3>Our Skills.</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>
+      tempor incididunt ut labore et dolore.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>
+      tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="col m6">
+      <p class="wide"><i class="fa fa-camera margin-right"></i>Photography</p>
+      <div class="grey">
+        <div class="container dark-grey center" style="width:90%">90%</div>
+      </div>
+      <p class="wide"><i class="fa fa-desktop margin-right"></i>Web Design</p>
+      <div class="grey">
+        <div class="container dark-grey center" style="width:85%">85%</div>
+      </div>
+      <p class="wide"><i class="fa fa-photo margin-right"></i>Photoshop</p>
+      <div class="grey">
+        <div class="container dark-grey center" style="width:75%">75%</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ -->
+
+
+
+<!-- Contact Section -->
+<div class="container light-grey" style="padding:128px 16px" id="contact">
+  <h3 class="center">CONTACT</h3>
+  <p class="center large">Lets get in touch. Send us a message:</p>
+  <div class="row-padding" style="margin-top:64px">
+    <div class="half">
+      <p><i class="fa fa-map-marker fa-fw xxlarge margin-right"></i> Chicago, US</p>
+      <p><i class="fa fa-phone fa-fw xxlarge margin-right"></i> Phone: +00 151515</p>
+      <p><i class="fa fa-envelope fa-fw xxlarge margin-right"> </i> Email: mail@mail.com</p>
+      <br>
+      <form action="/action_page.php" target="_blank">
+        <p><input class="input border" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="input border" type="text" placeholder="Email" required name="Email"></p>
+        <p><input class="input border" type="text" placeholder="Subject" required name="Subject"></p>
+        <p><input class="input border" type="text" placeholder="Message" required name="Message"></p>
+        <p>
+          <button class="button black" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </p>
+      </form>
+    </div>
+    <div class="half">
+      <!-- Add Google Maps -->
+      <div id="googleMap" class="greyscale-max" style="width:100%;height:510px;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="center black padding-64">
+  <a href="#home" class="button light-grey"><i class="fa fa-arrow-up margin-right"></i>To the top</a>
+  <div class="xlarge section">
+    <i class="fa fa-facebook-official hover-opacity"></i>
+    <i class="fa fa-instagram hover-opacity"></i>
+    <i class="fa fa-snapchat hover-opacity"></i>
+    <i class="fa fa-pinterest-p hover-opacity"></i>
+    <i class="fa fa-twitter hover-opacity"></i>
+    <i class="fa fa-linkedin hover-opacity"></i>
+  </div>
+  <p>Powered by <a href="" title="CodingKarma" target="_blank" class="hover-text-green">CodingKarma</a></p>
+</footer>
+
+<!-- Add Google Maps -->
+<script>
+function myMap()
+{
+  myCenter=new google.maps.LatLng(41.878114, -87.629798);
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+    } else {
+        mySidebar.style.display = 'block';
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</html>
