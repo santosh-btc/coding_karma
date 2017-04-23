@@ -69,7 +69,7 @@ body, html {
   <a href="#about" onclick="w3_close()" class="bar-item button">ABOUT</a>
   <a href="#team" onclick="w3_close()" class="bar-item button">TEAM</a>
   <a href="#work" onclick="w3_close()" class="bar-item button">COURSES</a>
-  <a href="login-1/login.html" onclick="w3_close()" class="bar-item button">LOGIN</a>
+  <%= link_to "LOGIN", new_user_session_path, class: "bar-item button" %>
   <a href="#contact" onclick="w3_close()" class="bar-item button">CONTACT</a>
 </nav>
 
@@ -79,7 +79,7 @@ body, html {
     <span class="jumbo hide-small">Start something that matters</span><br>
     <span class="xxlarge hide-large hide-medium">Start something that matters</span><br>
     <span class="large">Stop wasting valuable time, Come with us and Learn some Computer Programming today.</span>
-    <p><a href="login-1/login.html" class="button white padding-large large margin-top opacity hover-opacity-off">Learn more and start today</a></p>
+    <p><%= link_to "Learn more and start today", new_user_session_path, class: "button white padding-large large margin-top opacity hover-opacity-off" %></p>
   </div>
   <div class="display-bottomleft text-grey large" style="padding:24px 48px">
     <i class="fa fa-facebook-official hover-opacity"></i>
